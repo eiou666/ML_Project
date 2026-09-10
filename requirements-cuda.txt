@@ -1,0 +1,5 @@
+# Local RTX 3060 Ti / Python 3.12 / CUDA 12.1 constraints.
+# Install torch/torchvision from https://download.pytorch.org/whl/cu121 first.
+torch==2.5.1+cu121
+torchvision==0.20.1+cu121
+numpy==1.26.4

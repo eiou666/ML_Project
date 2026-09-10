@@ -1,0 +1,48 @@
+project:
+  output_dir: outputs/runs
+  active_output_dir: outputs/active
+  experiment_name: fashion_mnist_ssl
+
+data:
+  name: fashion_mnist
+  root: data
+  download: false
+  label_ratio: 0.10
+  validation_fraction: 0.10
+  num_workers: 2
+  pin_memory: true
+  synthetic_train_size: 1000
+  synthetic_test_size: 200
+
+model:
+  num_classes: 10
+  dropout: 0.20
+
+method:
+  name: supervised
+  tau: 0.95
+  lambda_u: 1.0
+
+train:
+  seed: 0
+  device: cuda
+  steps: 12000
+  batch_labeled: 64
+  batch_unlabeled: 192
+  learning_rate: 0.003
+  weight_decay: 0.0001
+  warmup_steps: 500
+  ema_decay: 0.999
+  eval_interval: 500
+  log_interval: 100
+  gradient_clip_norm: 5.0
+  amp: true
+  deterministic: true
+
+active:
+  strategy: none
+  initial_ratio: 0.01
+  query_size: 600
+  rounds: 2
+  candidate_multiplier: 5
+

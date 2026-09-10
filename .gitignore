@@ -1,0 +1,29 @@
+# Local Python environments, downloaded dependencies and caches
+.venv*/
+venv-legacy*/
+.uv-cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+tmp/
+
+# Downloaded datasets and raw training outputs; keep final summary artifacts
+data/
+outputs/*
+!outputs/summary/
+*.pt
+*.pth
+*.npz
+*.zip
+
+# Local credentials and editor / OS state
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
